@@ -6,9 +6,10 @@ TODOS
 
 
 ---------
-1) save to firebase
-  . figure out how we want to do images
-2) pull from firebase (sort order)
-3) style things
-  . bring in less or sass
-4) bring in styling from og genchat
+- save to firebase
+  - figure out how we want to do images
+- pull from firebase (sort order)
+- style things
+  - bring in less or sass
+- bring in styling from og genchat
+- bring in homepage from genchat 
