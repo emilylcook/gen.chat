@@ -35,13 +35,14 @@ class Timeline extends Component {
   }
 
   render () {
-    let eventNodes = this.state.events.map((event) => {
 
-      console.log(event)
+    let counter = 0;
+    let eventNodes = this.state.events.map((event) => {
+      counter++;
       return (
         <div className="card">
           <div className="card-content">
-            <TimelineEvent title={event.Title} type={event.Type} date={event.Date} image={event.ImageName} description= {event.Description} />
+            <TimelineEvent title={event.Title} type={event.Type} date={event.Date} image={event.ImageName} description= {event.Description} counter={counter} />
           </div>
         </div>
       )

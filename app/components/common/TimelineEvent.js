@@ -7,14 +7,40 @@ class TimelineEvent extends Component {
     console.log('item')
     console.log(this.props)
 
+    let c = '';
+    if (this.props.counter % 2 == 0){
+      c = 'timeline-inverted';
+    }
+
+    let iconType = 'time';
+    if (this.props.type == 'add'){
+      iconType = 'plus'
+    }
+    else if (this.props.type == 'celebrate'){
+      iconType = 'time'
+    }
+    else if (this.props.type == 'removal'){
+      iconType = 'minus'
+    }
+
+    // TODO: logic to determine class for Type
+    // logic to determine side
+
     return (
-      <div>
-        {this.props.title}
-        {this.props.type}
-        {this.props.date}
-        {this.props.image}
-        {this.props.description}
-      </div>
+
+      <li className={c}>
+          <div className="timeline-badge success"><i className={'glyphicon glyphicon-' + iconType}></i></div>
+          <div className="timeline-panel">
+              <div className="timeline-heading">
+                  <h4 className="timeline-title">{this.props.title}</h4>
+                  <p><small className="text-muted"><i className="glyphicon glyphicon-time"></i>&nbsp; {this.props.date}</small></p>
+              </div>
+              <div className="timeline-body">
+                  <p>{this.props.description}</p>
+                  // <img src="img/{this.props.image}.png" />
+              </div>
+          </div>
+      </li>
     )
   }
 }
