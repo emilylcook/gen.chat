@@ -1,50 +1,45 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import firebase from 'firebase'
-import TimelineEvent from './common/TimelineEvent';
-import _ from 'lodash';
+import TimelineEvent from './common/TimelineEvent'
+import _ from 'lodash'
 
 class Timeline extends Component {
   constructor (props) {
     super(props)
     this.state = {
       events: []
-    };
+    }
 
     // everytime data changes at (database/messages) provide this callback function that returns a new set of data
-    let app = firebase.database().ref('events');
+    let app = firebase.database().ref('events')
     app.on('value', snapshot => {
-      this.getData(snapshot.val());
-    });
+      this.getData(snapshot.val())
+    })
   }
 
-  getData(values){
-    let eventValues = values;
+  getData (values) {
+    let eventValues = values
     let events = _(eventValues)
                       .keys()
                       .map(eventKey => {
-                          let cloned = _.clone(eventValues[eventKey]);
-                          cloned.key = eventKey;
-                          return cloned;
+                        let cloned = _.clone(eventValues[eventKey])
+                        cloned.key = eventKey
+                        return cloned
                       })
-                      .value();
+                      .value()
 
     this.setState({
       events: events
-    });
+    })
   }
 
   render () {
-
-    let counter = 0;
-    let eventNodes = this.state.events.map((event) => {
-      counter++;
+    let counter = 0
+    let eventNodes = this.state.events.map((event, index) => {
+      counter++
       return (
-        <div className="card">
-          <div className="card-content">
-            <TimelineEvent title={event.Title} type={event.Type} date={event.Date} image={event.ImageName} description= {event.Description} counter={counter} />
-          </div>
-        </div>
+        <TimelineEvent key={index} title={event.Title} type={event.Type} date={event.Date} image={event.ImageName} description={event.Description} counter={counter} />
       )
     });
     return (
