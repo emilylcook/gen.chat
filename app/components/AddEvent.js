@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import AddEventForm from './common/AddEventForm'
+import firebase from 'firebase'
 
 class AddEvent extends Component {
   constructor (props) {
@@ -25,8 +26,29 @@ class AddEvent extends Component {
     )
   }
 
-  _AddEvent (username, password) {
-    console.log('update params here')
+  _AddEvent (form) {
+    console.log('save to firebase here')
+    console.log(form)
+    var user = firebase.auth().currentUser;
+    console.log('current user')
+    console.log(user.email)
+
+    var obj = {
+      Title: form.title,
+      Date: form.date,
+      Type: form.type,
+      ImageName: 'TODO',
+      Description: form.description,
+      CreatedBy: user.email,
+      CreatedOn: Date.now()
+    }
+
+    console.log(obj)
+
+    let dbCon = firebase.database().ref('/events');
+    dbCon.push(obj)
+
+    // direct user to timeline
     // his.props.dispatch(loginRequest({username, password}))
   }
 }

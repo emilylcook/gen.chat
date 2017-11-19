@@ -137,7 +137,7 @@ export function * registerFlow () {
     if (wasSuccessful) {
       yield put({type: SET_AUTH, newAuthState: true}) // User is logged in (authorized) after being registered
       yield put({type: CHANGE_FORM, newFormState: {username: '', password: ''}}) // Clear form
-      forwardTo('/dashboard') // Go to dashboard page
+      forwardTo('/timeline') // Go to dashboard page
     }
   }
 }
@@ -154,6 +154,5 @@ export default function * root () {
 
 // Little helper function to abstract going to different pages
 function forwardTo (location) {
-  console.log('forwardTo')
   browserHistory.push(location)
 }

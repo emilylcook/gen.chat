@@ -22,8 +22,6 @@ class Home extends Component {
 }
 
 function select (state) {
-
-  
   console.log('home select')
 
   return {

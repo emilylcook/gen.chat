@@ -1,12 +1,15 @@
 import React, {Component} from 'react'
 import ErrorMessage from './ErrorMessage'
 import LoadingButton from './LoadingButton'
+import {connect} from 'react-redux'
 
 import {changeForm} from '../../actions'
 
 class AddEventForm extends Component {
   constructor (props) {
     super(props)
+
+    this.state = {type: 'memory'}; // default type
 
     this._onSubmit = this._onSubmit.bind(this)
     this._changeTitle = this._changeTitle.bind(this)
@@ -44,8 +47,9 @@ class AddEventForm extends Component {
             id='username'
             value={this.props.data.type}
             onChange={this._changeType}
+            defaultValue = 'memory'
            >
-            <option value='memory' selected>Memory</option>
+            <option value='memory'>Memory</option>
             <option value='celebrate'>Celebration</option>
             <option value='add'>New Member</option>
             <option value='removal'>BOYBYE</option>
@@ -67,7 +71,6 @@ class AddEventForm extends Component {
             Date*
           </label>
         </div>
-
         <div className='form__field-wrapper'>
           <input
             className='form__field-input'
@@ -114,19 +117,19 @@ class AddEventForm extends Component {
   }
 
   _changeTitle (event) {
-    this._emitChange({...this.props.data, title: event.target.value})
+    this.setState({title: event.target.value});
   }
 
   _changeDate (event) {
-    this._emitChange({...this.props.data, date: event.target.value})
+    this.setState({date: event.target.value});
   }
 
   _changeType (event) {
-    this._emitChange({...this.props.data, type: event.target.value})
+    this.setState({type: event.target.value});
   }
 
   _changeDescription (event) {
-    this._emitChange({...this.props.data, description: event.target.value})
+    this.setState({description: event.target.value});
   }
 
   // todo : image
@@ -137,10 +140,7 @@ class AddEventForm extends Component {
 
   _onSubmit (event) {
     event.preventDefault()
-
-    console.log('before add event submit')
-    console.log(this.props.data)
-    // this.props.onSubmit(this.props.data.username, this.props.data.password)
+    this.props.onSubmit(this.state)
   }
 }
 
@@ -154,4 +154,12 @@ AddEventForm.propTypes = {
   currentlySending: React.PropTypes.bool
 }
 
-export default AddEventForm
+// Which props do we want to inject, given the global state?
+function select (state) {
+  return {
+    data: state
+  }
+}
+
+// Wrap the component to inject dispatch and state into it
+export default connect(select)(AddEventForm)

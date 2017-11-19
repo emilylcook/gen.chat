@@ -15,8 +15,9 @@ hot:
 - save to firebase
   - figure out how we want to do images
 - pull from firebase (sort order)
-) style things
+- style things
   - bring in less or sass
+  - nav 'selected' state
 - bring in styling from og genchat
 - bring in homepage
 
@@ -25,7 +26,7 @@ Road Map
 ---------
 - some sort of alert for viewing users that an event was added
 - sorting, searching
-- 
+-
 
 
 Run It

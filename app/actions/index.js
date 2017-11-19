@@ -21,7 +21,6 @@ import {
  * @param  {string} newFormState.password The new text of the password input field of the form
  */
 export function changeForm (newFormState) {
-  console.log('change form')
   return {type: CHANGE_FORM, newFormState}
 }
 
@@ -30,7 +29,6 @@ export function changeForm (newFormState) {
  * @param  {boolean} newAuthState True means a user is logged in, false means no user is logged in
  */
 export function setAuthState (newAuthState) {
-  console.log('setAuthState')
   return {type: SET_AUTH, newAuthState}
 }
 
@@ -39,7 +37,6 @@ export function setAuthState (newAuthState) {
  * @param  {boolean} sending True means we're sending a request, false means we're not
  */
 export function sendingRequest (sending) {
-  console.log('sendingRequest')
   return {type: SENDING_REQUEST, sending}
 }
 
@@ -50,7 +47,6 @@ export function sendingRequest (sending) {
  * @param  {string} data.password The password of the user to log in
  */
 export function loginRequest (data) {
-  console.log('loginRequest')
   return {type: LOGIN_REQUEST, data}
 }
 
@@ -68,7 +64,6 @@ export function logout () {
  * @param  {string} data.password The password of the user to register
  */
 export function registerRequest (data) {
-  console.log('registerRequest')
   return {type: REGISTER_REQUEST, data}
 }
 

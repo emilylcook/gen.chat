@@ -25,11 +25,6 @@ let initialState = {
 // Takes care of changing the application state
 function reducer (state = initialState, action) {
 
-  console.log("reducer change");
-  console.log(state);
-  console.log(action);
-
-
   switch (action.type) {
     case CHANGE_FORM:
       return {...state, formState: action.newFormState}

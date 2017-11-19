@@ -53,7 +53,7 @@ function checkAuth (nextState, replace) {
       if (nextState.location.state && nextState.location.pathname) {
         replace(nextState.location.pathname)
       } else {
-        replace('/')
+        //  replace('/')
       }
     }
   } else {
@@ -64,6 +64,9 @@ function checkAuth (nextState, replace) {
       } else {
         replace('/')
       }
+    }
+    else{
+      console.log("here");
     }
   }
 }
