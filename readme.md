@@ -4,10 +4,7 @@
 TODOS
 
 hot:
-> add config File
-> add gitignore
-> add source to github
-> firebase deploy
+- firebase deploy
 
 ---------
 1) save to firebase
