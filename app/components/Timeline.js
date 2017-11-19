@@ -1,32 +1,56 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import firebase from 'firebase'
+import TimelineEvent from './common/TimelineEvent';
+import _ from 'lodash';
 
 class Timeline extends Component {
   constructor (props) {
     super(props)
+    this.state = {
+      events: []
+    };
 
-    this._Timeline = this._Timeline.bind(this)
+    // everytime data changes at (database/messages) provide this callback function that returns a new set of data
+    let app = firebase.database().ref('events');
+    app.on('value', snapshot => {
+      this.getData(snapshot.val());
+    });
+  }
+
+  getData(values){
+    let eventValues = values;
+    let events = _(eventValues)
+                      .keys()
+                      .map(eventKey => {
+                          let cloned = _.clone(eventValues[eventKey]);
+                          cloned.key = eventKey;
+                          return cloned;
+                      })
+                      .value();
+
+    this.setState({
+      events: events
+    });
   }
 
   render () {
-    const {dispatch} = this.props
-    const {formState, currentlySending, error} = this.props.data
+    let eventNodes = this.state.events.map((event) => {
 
+      console.log(event)
+      return (
+        <div className="card">
+          <div className="card-content">
+            <TimelineEvent title={event.Title} type={event.Type} date={event.Date} image={event.ImageName} description= {event.Description} />
+          </div>
+        </div>
+      )
+    });
     return (
-      <article>
-        <section className='text-section'>
-          <h1>Timeline of gen.chat</h1>
-          <p>
-            Welcome to the timeline
-          </p>
-        </section>
-      </article>
-    )
-  }
-
-  _Timeline (test) {
-    console.log('update params here')
-  // his.props.dispatch(loginRequest({username, password}))
+      <div>
+        {eventNodes}
+      </div>
+    );
   }
 }
 

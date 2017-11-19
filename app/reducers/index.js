@@ -19,12 +19,11 @@ let initialState = {
   },
   error: '',
   currentlySending: false,
-  loggedIn: auth.loggedIn()
+  loggedIn: false
 }
 
 // Takes care of changing the application state
 function reducer (state = initialState, action) {
-
   switch (action.type) {
     case CHANGE_FORM:
       return {...state, formState: action.newFormState}

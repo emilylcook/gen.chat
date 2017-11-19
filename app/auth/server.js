@@ -16,7 +16,6 @@ const server = {
  * @param  {string} password The password of the user
  */
   login (email, password) {
-
     return new Promise((resolve, reject) => {
       firebase.auth().signInWithEmailAndPassword(email, password)
       .then(function (firebaseUser) {

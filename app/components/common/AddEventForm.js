@@ -9,7 +9,7 @@ class AddEventForm extends Component {
   constructor (props) {
     super(props)
 
-    this.state = {type: 'memory'}; // default type
+    this.state = {type: 'memory'} // default type
 
     this._onSubmit = this._onSubmit.bind(this)
     this._changeTitle = this._changeTitle.bind(this)
@@ -47,7 +47,7 @@ class AddEventForm extends Component {
             id='username'
             value={this.props.data.type}
             onChange={this._changeType}
-            defaultValue = 'memory'
+            defaultValue='memory'
            >
             <option value='memory'>Memory</option>
             <option value='celebrate'>Celebration</option>
@@ -117,19 +117,19 @@ class AddEventForm extends Component {
   }
 
   _changeTitle (event) {
-    this.setState({title: event.target.value});
+    this.setState({title: event.target.value})
   }
 
   _changeDate (event) {
-    this.setState({date: event.target.value});
+    this.setState({date: event.target.value})
   }
 
   _changeType (event) {
-    this.setState({type: event.target.value});
+    this.setState({type: event.target.value})
   }
 
   _changeDescription (event) {
-    this.setState({description: event.target.value});
+    this.setState({description: event.target.value})
   }
 
   // todo : image

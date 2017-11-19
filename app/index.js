@@ -65,9 +65,6 @@ function checkAuth (nextState, replace) {
         replace('/')
       }
     }
-    else{
-      console.log("here");
-    }
   }
 }
 

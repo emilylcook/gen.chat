@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import AddEventForm from './common/AddEventForm'
 import firebase from 'firebase'
+import {browserHistory} from 'react-router'
 
 class AddEvent extends Component {
   constructor (props) {
@@ -27,11 +28,7 @@ class AddEvent extends Component {
   }
 
   _AddEvent (form) {
-    console.log('save to firebase here')
-    console.log(form)
-    var user = firebase.auth().currentUser;
-    console.log('current user')
-    console.log(user.email)
+    var user = firebase.auth().currentUser
 
     var obj = {
       Title: form.title,
@@ -45,11 +42,11 @@ class AddEvent extends Component {
 
     console.log(obj)
 
-    let dbCon = firebase.database().ref('/events');
+    let dbCon = firebase.database().ref('/events')
     dbCon.push(obj)
 
-    // direct user to timeline
-    // his.props.dispatch(loginRequest({username, password}))
+    // take user to timeline
+    browserHistory.push('/timeline')
   }
 }
 
