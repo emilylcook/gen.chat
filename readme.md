@@ -3,8 +3,7 @@
 
 TODOS
 
-hot:
-- firebase deploy
+
 
 ---------
 1) save to firebase
