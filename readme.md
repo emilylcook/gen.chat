@@ -26,3 +26,18 @@ Road Map
 - some sort of alert for viewing users that an event was added
 - sorting, searching
 - 
+
+
+Run It
+--------
+clone the repro
+1) npm install
+2) npm start
+3) add firebase configs to a config.json (todo - add an exampleconfig with blank values for the repro)
+
+setting up firebase
+1) firebase init -> check database / hosting
+
+to deploy
+1) npm deploy
+2) can use firebase serve to serve locally from build
