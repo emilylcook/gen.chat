@@ -45,11 +45,11 @@ class AddEventForm extends Component {
             value={this.props.data.type}
             onChange={this._changeType}
            >
-            <option value="memory" selected>Memory</option>
-            <option value="celebrate">Celebration</option>
-            <option value="add">New Member</option>
-            <option value="removal">BOYBYE</option>
-           </select>
+            <option value='memory' selected>Memory</option>
+            <option value='celebrate'>Celebration</option>
+            <option value='add'>New Member</option>
+            <option value='removal'>BOYBYE</option>
+          </select>
           <label className='form__field-label' htmlFor='title'>
             Type*
           </label>
@@ -71,18 +71,18 @@ class AddEventForm extends Component {
         <div className='form__field-wrapper'>
           <input
             className='form__field-input'
-            id="upload"
-            ref="upload"
-            type="file"
-            accept="image/*"
-            onChange={(event)=> {
-              console.log("read file");
-               //this.readFile(event)
+            id='upload'
+            ref='upload'
+            type='file'
+            accept='image/*'
+            onChange={(event) => {
+              console.log('read file')
+               // this.readFile(event)
             }}
-            onClick={(event)=> {
-              console.log("reset happily");
-               event.target.value = null
-             }}
+            onClick={(event) => {
+              console.log('reset happily')
+              event.target.value = null
+            }}
           />
           <label className='form__field-label' htmlFor='date'>
             Image File
@@ -138,9 +138,9 @@ class AddEventForm extends Component {
   _onSubmit (event) {
     event.preventDefault()
 
-    console.log("before add event submit");
-    console.log(this.props.data);
-    //this.props.onSubmit(this.props.data.username, this.props.data.password)
+    console.log('before add event submit')
+    console.log(this.props.data)
+    // this.props.onSubmit(this.props.data.username, this.props.data.password)
   }
 }
 

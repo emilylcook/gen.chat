@@ -2,8 +2,6 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import AddEventForm from './common/AddEventForm'
 
-import {loginRequest} from '../actions'
-
 class AddEvent extends Component {
   constructor (props) {
     super(props)
@@ -28,8 +26,8 @@ class AddEvent extends Component {
   }
 
   _AddEvent (username, password) {
-    console.log("update params here");
-    //his.props.dispatch(loginRequest({username, password}))
+    console.log('update params here')
+    // his.props.dispatch(loginRequest({username, password}))
   }
 }
 

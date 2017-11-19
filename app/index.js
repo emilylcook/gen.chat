@@ -12,11 +12,7 @@ import rootSaga from './sagas'
 import {clearError} from './actions'
 
 // firebase
-import firebase from 'firebase';
-var config = require('./config');
-
-import './styles/main.css'
-
+import firebase from 'firebase'
 import App from './components/App'
 import Home from './components/Home'
 import Login from './components/Login'
@@ -24,6 +20,9 @@ import Register from './components/Register'
 import Timeline from './components/Timeline'
 import AddEvent from './components/AddEvent'
 import NotFound from './components/NotFound'
+import './styles/main.css'
+
+var config = require('./config')
 
 const logger = createLogger({
   // Ignore `CHANGE_FORM` actions in the logger, since they fire after every keystroke
@@ -72,12 +71,11 @@ function checkAuth (nextState, replace) {
 // Mostly boilerplate, except for the routes. These are the pages you can go to,
 // which are all wrapped in the App component, which contains the navigation etc
 class LoginFlow extends Component {
-
-  constructor(props){
-    super(props);
+  constructor (props) {
+    super(props)
 
     // Initialize Firebase
-    firebase.initializeApp(config.firebase);
+    firebase.initializeApp(config.firebase)
   }
 
   render () {

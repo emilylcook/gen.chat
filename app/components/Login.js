@@ -40,6 +40,10 @@ Login.propTypes = {
 
 // Which props do we want to inject, given the global state?
 function select (state) {
+
+
+  console.log('login select')
+
   return {
     data: state
   }

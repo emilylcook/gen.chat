@@ -13,11 +13,8 @@ const request = {
   * @param  {?object} data     The data that should be transferred to the server
   */
   post (endpoint, data) {
-
-    console.log(data);
     switch (endpoint) {
       case '/login':
-      console.log("login");
         return server.login(data.username, data.password)
       case '/register':
         return server.register(data.username, data.password)

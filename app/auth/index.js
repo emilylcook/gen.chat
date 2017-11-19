@@ -1,11 +1,5 @@
 import request from './request'
 
-let localStorage
-
-// If not, use the browser one
-localStorage = global.window.localStorage
-
-
 const auth = {
   /**
   * Logs a user in, returning a promise with `true` when done
@@ -19,7 +13,6 @@ const auth = {
     return request.post('/login', {username, password})
       .then(response => {
         // Save token to local storage
-        localStorage.token = response.token
         return Promise.resolve(true)
       })
   },
