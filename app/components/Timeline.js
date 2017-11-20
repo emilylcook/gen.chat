@@ -7,6 +7,8 @@ import _ from 'lodash'
 class Timeline extends Component {
   constructor (props) {
     super(props)
+    console.log('constructor')
+    console.log(this.state)
     this.state = {
       events: []
     }
@@ -29,21 +31,29 @@ class Timeline extends Component {
                       })
                       .value()
 
-    this.setState({
+    console.log('test')
+    console.log(events)
+
+    console.log(this)
+
+     this.setState({
       events: events
-    })
+     })
   }
 
   render () {
     let counter = 0
+    console.log(this.state)
     let eventNodes = this.state.events.map((event, index) => {
       counter++
       return (
-        <TimelineEvent key={index} title={event.Title} type={event.Type} date={event.Date} image={event.ImageName} description={event.Description} counter={counter} />
+        <div>
+          <TimelineEvent key={index} title={event.Title} type={event.Type} date={event.Date} image={event.ImageName} description={event.Description} counter={counter} />
+        </div>
       )
     });
     return (
-      <div>
+      <div> hi
         {eventNodes}
       </div>
     );

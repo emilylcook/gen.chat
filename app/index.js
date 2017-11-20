@@ -16,7 +16,6 @@ import firebase from 'firebase'
 import App from './components/App'
 import Home from './components/Home'
 import Login from './components/Login'
-import Register from './components/Register'
 import Timeline from './components/Timeline'
 import AddEvent from './components/AddEvent'
 import NotFound from './components/NotFound'
@@ -86,7 +85,6 @@ class LoginFlow extends Component {
             <Route path='/' component={Home} />
             <Route onEnter={checkAuth}>
               <Route path='/login' component={Login} />
-              <Route path='/register' component={Register} />
               <Route path='/timeline' component={Timeline} />
               <Route path='/addevent' component={AddEvent} />
             </Route>

@@ -2,6 +2,18 @@
 import React, {Component} from 'react'
 
 class TimelineEvent extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      title: '',
+      description: '',
+      type: '',
+      image: '',
+      date: ''
+    };
+  }
+
   render () {
     let c = ''
     let iconType = 'time'
@@ -21,6 +33,7 @@ class TimelineEvent extends Component {
     // TODO: logic to determine class for Type
     // logic to determine side
 
+      console.log('render 1')
     return (
       <li className={c}>
         <div className='timeline-badge success'><i className={'glyphicon glyphicon-' + iconType}></i></div>
