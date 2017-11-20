@@ -12,9 +12,7 @@ To-Do?
 hot:
 - firebase deploy
 
-- save to firebase
-  - figure out how we want to do images
-- pull from firebase (sort order)
+- add sort order to pull
 - style things
   - bring in less or sass
   - nav 'selected' state
