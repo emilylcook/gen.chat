@@ -13,11 +13,18 @@ class Timeline extends Component {
       events: []
     }
 
-    // everytime data changes at (database/messages) provide this callback function that returns a new set of data
-    let app = firebase.database().ref('events')
-    app.on('value', snapshot => {
-      this.getData(snapshot.val())
-    })
+  }
+
+  componentWillMount(){
+
+  }
+
+  componentDidMount(){
+      // everytime data changes at (database/messages) provide this callback function that returns a new set of data
+      let app = firebase.database().ref('events')
+      app.on('value', snapshot => {
+        this.getData(snapshot.val())
+      })
   }
 
   getData (values) {
@@ -31,11 +38,6 @@ class Timeline extends Component {
                       })
                       .value()
 
-    console.log('test')
-    console.log(events)
-
-    console.log(this)
-
      this.setState({
       events: events
      })
@@ -43,7 +45,6 @@ class Timeline extends Component {
 
   render () {
     let counter = 0
-    console.log(this.state)
     let eventNodes = this.state.events.map((event, index) => {
       counter++
       return (

@@ -35,7 +35,7 @@ class AddEvent extends Component {
       Date: form.date,
       Type: form.type,
       ImageName: 'TODO',
-      Description: form.description,
+      Description: form.description !== undefined ? form.description : "",
       CreatedBy: user.email,
       CreatedOn: Date.now()
     }
