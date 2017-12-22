@@ -75,6 +75,9 @@ function makeWebpackConfig (options) {
         }
       ]
     },
+    node: {
+      fs: 'empty'
+    },
     plugins: plugins,
     postcss: function () {
       return [

@@ -30,17 +30,28 @@ class AddEvent extends Component {
   _AddEvent (form) {
     var user = firebase.auth().currentUser
 
+    var image = form.file;
+    var imageName = Date.now() + image.name
+
+    // Create the file metadata
+    var metadata = {
+      contentType: 'image/jpeg'
+    };
+
+    var storageRef = firebase.storage().ref();
+
+    // Upload file
+    var uploadTask = storageRef.child('images/' + imageName).put(image)
+
     var obj = {
       Title: form.title,
       Date: form.date,
       Type: form.type,
-      ImageName: 'TODO',
+      ImageName: imageName,
       Description: form.description !== undefined ? form.description : "",
       CreatedBy: user.email,
       CreatedOn: Date.now()
     }
-
-    console.log(obj)
 
     let dbCon = firebase.database().ref('/events')
     dbCon.push(obj)

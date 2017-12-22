@@ -14,6 +14,7 @@ class AddEventForm extends Component {
     this._onSubmit = this._onSubmit.bind(this)
     this._changeTitle = this._changeTitle.bind(this)
     this._changeDate = this._changeDate.bind(this)
+    this._changeImage = this._changeImage.bind(this)
     this._changeDescription = this._changeDescription.bind(this)
     this._changeType = this._changeType.bind(this)
   }
@@ -78,12 +79,8 @@ class AddEventForm extends Component {
             ref='upload'
             type='file'
             accept='image/*'
-            onChange={(event) => {
-              console.log('read file')
-               // this.readFile(event)
-            }}
+            onChange={this._changeImage}
             onClick={(event) => {
-              console.log('reset happily')
               event.target.value = null
             }}
           />
@@ -122,6 +119,21 @@ class AddEventForm extends Component {
 
   _changeDate (event) {
     this.setState({date: event.target.value})
+  }
+
+  _changeImage (event) {
+    event.preventDefault();
+
+    let reader = new FileReader();
+    let file = event.target.files[0];
+
+    reader.onloadend = () => {
+      this.setState({
+        file: file
+      });
+    }
+
+    reader.readAsDataURL(file)
   }
 
   _changeType (event) {
