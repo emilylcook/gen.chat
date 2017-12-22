@@ -54,7 +54,7 @@ class Timeline extends Component {
       )
     });
     return (
-      <div> hi
+      <div>
         {eventNodes}
       </div>
     );

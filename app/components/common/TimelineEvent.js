@@ -58,7 +58,7 @@ class TimelineEvent extends Component {
               <p><small className='text-muted'><i className='glyphicon glyphicon-time'></i>&nbsp; {this.props.date}</small></p>
             </div>
             <div className='timeline-body'>
-              <p>{this.props.Description}</p>
+              <p>{this.props.description}</p>
               <img src={this.state.imageUrl}  />
             </div>
           </div>
