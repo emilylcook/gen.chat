@@ -1,0 +1,4 @@
+EMILY TODO:
+
+1. loading currently waits on image (image isnt required)
+---> issue when adding timeline notices a change but doesnt finish

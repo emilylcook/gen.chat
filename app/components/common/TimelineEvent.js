@@ -17,11 +17,15 @@ class TimelineEvent extends Component {
 
   componentDidMount() {
     var storageRef = firebase.storage().ref()
-    var imageUrl = storageRef.child('images/' + this.props.image).getDownloadURL().then(url => {
-      this.setState({
-        imageUrl: url
+console.log(typeof(this.props.image))
+    if (this.props.image != null ) {
+      console.log('inner')
+      storageRef.child('images/' + this.props.image).getDownloadURL().then(url => {
+        this.setState({
+          imageUrl: url
+        })
       })
-    })
+    }
   }
 
   render () {
@@ -43,7 +47,11 @@ class TimelineEvent extends Component {
     // TODO: logic to determine class for Type
     // logic to determine side
 
-    if (this.state.imageUrl == '') {
+    let imageDiv = ''
+    if (this.state.imageUrl != '') {
+      imageDiv = <img src={this.state.imageUrl} />
+    }
+    if (this.props.image != null && this.state.imageUrl == '') {
         return (
           <div>Loading...</div>
         )
@@ -59,7 +67,7 @@ class TimelineEvent extends Component {
             </div>
             <div className='timeline-body'>
               <p>{this.props.description}</p>
-              <img src={this.state.imageUrl}  />
+              {imageDiv}
             </div>
           </div>
         </li>

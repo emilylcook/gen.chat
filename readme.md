@@ -38,5 +38,5 @@ setting up firebase
 1) firebase init -> check database / hosting
 
 to deploy
-1) npm deploy
+1) npm run deploy
 2) can use firebase serve to serve locally from build
