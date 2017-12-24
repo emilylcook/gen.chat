@@ -19,7 +19,10 @@ import Login from './components/Login'
 import Timeline from './components/Timeline'
 import AddEvent from './components/AddEvent'
 import NotFound from './components/NotFound'
+
+// styles
 import './styles/main.css'
+// import 'bootstrap/dist/css/bootstrap.css';
 
 var config = require('./config')
 

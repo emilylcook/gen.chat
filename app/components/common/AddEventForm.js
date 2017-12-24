@@ -122,18 +122,7 @@ class AddEventForm extends Component {
   }
 
   _changeImage (event) {
-    event.preventDefault();
-
-    let reader = new FileReader();
-    let file = event.target.files[0];
-
-    reader.onloadend = () => {
-      this.setState({
-        file: file
-      });
-    }
-
-    reader.readAsDataURL(file)
+    event.preventDefault()
   }
 
   _changeType (event) {

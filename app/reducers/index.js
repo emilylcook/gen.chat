@@ -9,7 +9,7 @@ import {
   REQUEST_ERROR,
   CLEAR_ERROR
 } from '../actions/constants'
-import auth from '../auth'
+// import auth from '../auth'
 
 // The initial application state
 let initialState = {

@@ -30,67 +30,46 @@ class AddEvent extends Component {
   _AddEvent (form) {
     var user = firebase.auth().currentUser
 
-console.log(form.file)
-    if (form.file != null){
-      var image = form.file;
+    if (form.file != null) {
+      var image = form.file
       var imageName = Date.now() + image.name
-
-      // Create the file metadata
-      var metadata = {
-        contentType: 'image/jpeg'
-      };
-
-      var storageRef = firebase.storage().ref();
+      var storageRef = firebase.storage().ref()
 
       // Upload file
       var uploadTask = storageRef.child('images/' + imageName).put(image)
 
-      uploadTask.on('state_changed', function(snapshot) {
-    // Observe state change events such as progress, pause, and resume
-    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-      var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      console.log('Upload is ' + progress + '% done');
-      switch (snapshot.state) {
-          case firebase.storage.TaskState.PAUSED: // or 'paused'
-            console.log('Upload is paused');
-            break;
-          case firebase.storage.TaskState.RUNNING: // or 'running'
-            console.log('Upload is running');
-            break;
-        }
-      }, function(error) {
+      uploadTask.on('state_changed', function (snapshot) {
+      }, function (error) {
         console.log('error uploading file', error)
         // Handle unsuccessful uploads
-      }, function() {
+      }, function () {
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-         // var downloadURL = uploadTask.snapshot.downloadURL;
 
-         var obj = {
-           Title: form.title,
-           Date: form.date,
-           Type: form.type,
-           ImageName: imageName,
-           Description: form.description !== undefined ? form.description : "",
-           CreatedBy: user.email,
-           CreatedOn: Date.now()
-         }
+        var obj = {
+          Title: form.title,
+          Date: form.date,
+          Type: form.type,
+          ImageName: imageName,
+          Description: form.description !== undefined ? form.description : '',
+          CreatedBy: user.email,
+          CreatedOn: Date.now()
+        }
 
-         let dbCon = firebase.database().ref('/events')
-         dbCon.push(obj)
+        let dbCon = firebase.database().ref('/events')
+        dbCon.push(obj)
 
-         // take user to timeline
-         browserHistory.push('/timeline')
+        // take user to timeline
+        browserHistory.push('/timeline')
       })
-    }
-    else {
+    } else {
       var obj = {
-       Title: form.title,
-       Date: form.date,
-       Type: form.type,
-       Description: form.description !== undefined ? form.description : "",
-       CreatedBy: user.email,
-       CreatedOn: Date.now()
+        Title: form.title,
+        Date: form.date,
+        Type: form.type,
+        Description: form.description !== undefined ? form.description : '',
+        CreatedBy: user.email,
+        CreatedOn: Date.now()
       }
 
       let dbCon = firebase.database().ref('/events')
