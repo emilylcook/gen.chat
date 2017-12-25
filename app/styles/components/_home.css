@@ -1,19 +1,42 @@
 $wrapper-padding: 16px;
 
-.wrapper {
-	max-width: calc($max-width + $wrapper-padding * 2);
-	margin: 0 auto;
-	display: flex;
+
+/*
+ * Cover
+ */
+
+#app{
+	display:flex;
 	height: 100%;
-	padding: 0 $wrapper-padding;
+
 }
 
-#app {
-	height: 100%;
+#cover-container {
+  margin-right: auto;
+  margin-left: auto;
+	width: 100vw;
 }
 
-.text-section {
-	margin: 3em auto;
+.cover-wrapper{
+	display: table;
+	width: 100%;
+	height: 100%; /* For at least Firefox */
+	min-height: 100%;
+	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+	box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+
+.cover-wrapper-inner{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.cover-heading {
+    text-align: left;
+}
+
+.cover-page h1 {
+	font-size: 80px;
 }
 
 /*
@@ -27,4 +50,11 @@ html,body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }

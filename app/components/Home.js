@@ -4,13 +4,19 @@ import {connect} from 'react-redux'
 class Home extends Component {
   render () {
     return (
-      <article>
-        <div className='inner cover col-md-1' />
-        <div className='inner cover col-md-6 cover-heading'>
-          <h1>DO<br />EVERYTHING<br />FOR THE<br />NACHOS.</h1>
-          <a href='https://www.messenger.com/t/1322155157880770' className='btn btn-lg btn-default'>FUCK YEAH</a>
+      <div className="cover-wrapper">
+        <div className="cover-wrapper-inner">
+          <article id='cover-container'>
+            <div className="cover-page">
+              <div className='inner cover col-md-1' />
+              <div className='inner cover col-md-6 cover-heading'>
+                <h1>DO<br />EVERYTHING<br />FOR THE<br />NACHOS.</h1>
+                <a href='https://www.messenger.com/t/1322155157880770' className='btn btn-lg btn-default'>FUCK YEAH</a>
+              </div>
+            </div>
+          </article>
         </div>
-      </article>
+      </div>
     )
   }
 }
