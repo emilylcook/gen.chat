@@ -19,7 +19,7 @@ class Timeline extends Component {
 
   componentDidMount () {
     // everytime data changes at (database/messages) provide this callback function that returns a new set of data
-    let app = firebase.database().ref('events')
+    let app = firebase.database().ref('events').orderByChild('Date')
     app.on('value', snapshot => {
       this.getData(snapshot.val())
     })
@@ -43,7 +43,7 @@ class Timeline extends Component {
 
   render () {
     let counter = 0
-    let eventNodes = this.state.events.map((event, index) => {
+    let eventNodes = this.state.events.reverse().map((event, index) => {
       counter++
       return (
         <TimelineEvent key={index} title={event.Title} type={event.Type} date={event.Date} image={event.ImageName} description={event.Description} counter={counter} />
