@@ -1,4 +1,11 @@
 EMILY TODO:
 
-1. loading currently waits on image (image isnt required)
----> issue when adding timeline notices a change but doesnt finish
+-> css shadow only on home page (fix container)
+-> active nav btn 
+-> style timeline
+-> timeline default sort order
+-> add timeline sort
+
+
+MOBILE
+-> EVERYTHING AH

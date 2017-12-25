@@ -46,14 +46,22 @@ class Timeline extends Component {
     let eventNodes = this.state.events.map((event, index) => {
       counter++
       return (
-        <div>
-          <TimelineEvent key={index} title={event.Title} type={event.Type} date={event.Date} image={event.ImageName} description={event.Description} counter={counter} />
-        </div>
+        <TimelineEvent key={index} title={event.Title} type={event.Type} date={event.Date} image={event.ImageName} description={event.Description} counter={counter} />
       )
     })
     return (
-      <div>
-        {eventNodes}
+      <div className='site-wrapper'>
+        <div className='site-wrapper-inner'>
+          <div className='container site-container'>
+            <div className='page-header'>
+                <h1 id='timeline'>History of Gen.Chat</h1>
+            </div>
+            <span id='SortTimeline' className='sort-icon glyphicon glyphicon-chevron-down'></span>
+            <ul id='History-timeline' className='timeline'>
+              {eventNodes}
+            </ul>
+          </div>
+        </div>
       </div>
     )
   }

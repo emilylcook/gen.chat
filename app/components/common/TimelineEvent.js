@@ -15,7 +15,7 @@ class TimelineEvent extends Component {
     }
   }
 
-  componentDidMount () {
+  componentWillMount () {
     var storageRef = firebase.storage().ref()
     if (this.props.image != null) {
       storageRef.child('images/' + this.props.image).getDownloadURL().then(url => {
@@ -46,27 +46,22 @@ class TimelineEvent extends Component {
     if (this.state.imageUrl !== '') {
       imageDiv = <img src={this.state.imageUrl} />
     }
-    if (this.props.image !== null && this.state.imageUrl === '') {
-      return (
-        <div>Loading...</div>
-      )
-    } else {
-      return (
-        <li className={c}>
-          <div className='timeline-badge success'><i className={'glyphicon glyphicon-' + iconType} /></div>
-          <div className='timeline-panel'>
-            <div className='timeline-heading'>
-              <h4 className='timeline-title'>{this.props.title}</h4>
-              <p><small className='text-muted'><i className='glyphicon glyphicon-time' />&nbsp; {this.props.date}</small></p>
-            </div>
-            <div className='timeline-body'>
-              <p>{this.props.description}</p>
-              {imageDiv}
-            </div>
+
+    return (
+      <li className={c}>
+        <div className='timeline-badge success'><i className={'glyphicon glyphicon-' + iconType} /></div>
+        <div className='timeline-panel'>
+          <div className='timeline-heading'>
+            <h4 className='timeline-title'>{this.props.title}</h4>
+            <p><small className='text-muted'><i className='glyphicon glyphicon-time' />&nbsp; {this.props.date}</small></p>
           </div>
-        </li>
-      )
-    }
+          <div className='timeline-body'>
+            <p>{this.props.description}</p>
+            {imageDiv}
+          </div>
+        </div>
+      </li>
+    )
   }
 }
 
