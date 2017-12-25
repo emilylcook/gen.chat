@@ -14,8 +14,8 @@ class Nav extends Component {
   render () {
     const navButtons = this.props.loggedIn ? (
       <div>
-        <Link to='/addevent' className='btn btn--dash btn--nav'>Add Event</Link>
-        <Link to='/timeline' className='btn btn--dash btn--nav'>Timeline</Link>
+        <Link to='/addevent' className=''>Add Event</Link>
+        <Link to='/timeline' className=''>Timeline</Link>
         {this.props.currentlySending ? (
           <LoadingButton className='btn--nav' />
         ) : (
@@ -26,20 +26,22 @@ class Nav extends Component {
       <div>
         {  /*  <Link to='/register' className='btn btn--login btn--nav' onClick={this._clearError}>Register</Link> */ }
 
-        <Link to='/timeline' className='btn btn--dash btn--nav'>Timeline</Link>
-        <Link to='/login' className='btn btn--login btn--nav' onClick={this._clearError}>Login</Link>
+        <Link to='/timeline' className=''>Timeline</Link>
+        <Link to='/login' className='' onClick={this._clearError}>Login</Link>
       </div>
     )
 
     return (
-      <div className='nav'>
-        <div className='nav__wrapper'>
-          <Link to='/' className='nav__logo-wrapper' onClick={this._clearError}>
-            <h1 className='nav__logo'>Gen.Chat</h1>
-          </Link>
-          {navButtons}
-        </div>
-      </div>
+      <div className='masthead clearfix'>
+         <div className='inner'>
+           <Link to='/' className='nav__logo-wrapper' onClick={this._clearError}>
+             <h3 className='masthead-brand'>Gen.Chat</h3>
+           </Link>
+           <nav className='nav masthead-nav'>
+               {navButtons}
+           </nav>
+         </div>
+     </div>
     )
   }
 
