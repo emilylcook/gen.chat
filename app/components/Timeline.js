@@ -21,15 +21,13 @@ class Timeline extends Component {
     // everytime data changes at (database/messages) provide this callback function that returns a new set of data
     let eventValues
     let app = firebase.database().ref('events').orderByChild('DateTimestamp').on('value', snapshot => {
-        this.eventsValues = [];
+        this.eventsValues = []
         snapshot.forEach((eventValues) => {
             console.log(eventValues.key, eventValues.val())
-            this.eventsValues.push(eventValues.val());
-          //  this.getData(e.val())
-
+            this.eventsValues.push(eventValues.val())
         })
 
-        console.log(this.eventsValues);
+        console.log(this.eventsValues)
         this.setState({
           events: this.eventsValues
         })
