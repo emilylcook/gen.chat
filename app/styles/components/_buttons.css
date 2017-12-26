@@ -1,5 +1,11 @@
+.btn {
+  box-sizing: inherit;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
 .btn-default,
-.btn-default:hover,
 .btn-default:focus {
   color: #fff;
   text-shadow: none; /* Prevent inheritance from `body` */
@@ -7,4 +13,57 @@
   width: 40%;
   border-radius: 24px;
   background: darkorange;
+}
+
+/* HOME BUTTON HOVER */
+
+.home-btn:hover {
+  font-weight: 1000;
+  color: #fff;
+  letter-spacing: 2px;
+  background: darkorange;
+}
+
+/* MASTER BRAND BTN */
+.masthead-brand{
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 2em;
+  text-decoration: none;
+}
+
+.masthead-brand:hover,
+.masthead-brand:active {
+text-decoration: none;
+/*  letter-spacing: 5px; */
+}
+
+.masthead-brand:after{
+  backface-visibility: hidden;
+  border: 0px solid white;
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 680ms ease-in-out;
+  width: 0;
+}
+
+.masthead-brand:hover:after {
+  backface-visibility: hidden;
+  border: 2px solid white;
+  border-color: #fff;
+  transition: width 850ms ease-in-out;
+  width: 100%;
+}
+
+.masthead-brand:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 80%;
 }

@@ -3,17 +3,16 @@ EMILY TODO:
 P1
 -> max width on timeline items
 -> icon colors
-
+-> set html, dANGGErrouslly
 
 Other
 -> css shadow only on home page (fix container)
 -> active nav btn
--> style timeline
--> timeline default sort order
 -> add timeline sort
-
-
-
+-> datetimestamp to month dd yyyy
+-> login pretty
+-> text position ? top/bottom
+-> some better timeline left/right method
 
 ====================================
 MOBILE

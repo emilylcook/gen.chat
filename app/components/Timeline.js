@@ -21,24 +21,24 @@ class Timeline extends Component {
     // everytime data changes at (database/messages) provide this callback function that returns a new set of data
     let eventValues
     let app = firebase.database().ref('events').orderByChild('DateTimestamp').on('value', snapshot => {
+
         this.eventsValues = []
         snapshot.forEach((eventValues) => {
-            console.log(eventValues.key, eventValues.val())
             this.eventsValues.push(eventValues.val())
         })
 
-        console.log(this.eventsValues)
-        this.setState({
+        this.setState ({
           events: this.eventsValues
         })
     })
+  }
 
   render () {
     let counter = 0
     let eventNodes = this.state.events.map((event, index) => {
       counter++
       return (
-        <TimelineEvent key={index} side={event.side} title={event.Title} type={event.Type} date={event.Date} image={event.ImageName} description={event.Description} counter={counter} />
+        <TimelineEvent key={index} side={event.side} descriptionLink={event.descriptionLink} title={event.Title} type={event.Type} date={event.Date} image={event.ImageName} topText={event.TopText} description={event.Description} counter={counter} />
       )
     })
     return (
@@ -49,7 +49,7 @@ class Timeline extends Component {
                 <h1 id='timeline'>History of Gen.Chat</h1>
             </div>
             <span id='SortTimeline' className='sort-icon glyphicon glyphicon-chevron-down'></span>
-            <ul id='History-timeline' className='timeline'>
+            <ul id='History-timeline' className='col-md-push-2 col-md-8 timeline'>
               {eventNodes}
             </ul>
           </div>

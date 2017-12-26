@@ -53,6 +53,19 @@ class TimelineEvent extends Component {
       imageDiv = <img src={this.state.imageUrl} />
     }
 
+    let descriptionDiv = ''
+    if (this.props.descriptionLink !== '') {
+      descriptionDiv = <div><a href={this.props.descriptionLink}>{this.props.description}</a></div>
+    } else {
+      descriptionDiv = <p>{this.props.description}</p>
+    }
+
+    let topText = ''
+    if (this.props.topText !== '') {
+      topText = <p>{this.props.topText}</p>
+    }
+
+
     return (
       <li className={c}>
         <div className='timeline-badge success'><i className={'glyphicon glyphicon-' + iconType} /></div>
@@ -62,8 +75,9 @@ class TimelineEvent extends Component {
             <p><small className='text-muted'><i className='glyphicon glyphicon-time' />&nbsp; {this.props.date}</small></p>
           </div>
           <div className='timeline-body'>
-            <p>{this.props.description}</p>
+            {topText}
             {imageDiv}
+            {descriptionDiv}
           </div>
         </div>
       </li>
