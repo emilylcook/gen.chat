@@ -49,6 +49,7 @@ class AddEvent extends Component {
         var obj = {
           Title: form.title,
           Date: form.date,
+          DateTimestamp: new Date(form.date).getTime(),
           Type: form.type,
           ImageName: imageName,
           Description: form.description !== undefined ? form.description : '',
@@ -67,6 +68,7 @@ class AddEvent extends Component {
         Title: form.title,
         Date: form.date,
         Type: form.type,
+        DateTimestamp: new Date(form.date).getTime(),
         Description: form.description !== undefined ? form.description : '',
         CreatedBy: user.email,
         CreatedOn: Date.now()

@@ -1,11 +1,20 @@
 EMILY TODO:
 
+P1
+-> max width on timeline items
+-> icon colors
+
+
+Other
 -> css shadow only on home page (fix container)
--> active nav btn 
+-> active nav btn
 -> style timeline
 -> timeline default sort order
 -> add timeline sort
 
 
+
+
+====================================
 MOBILE
 -> EVERYTHING AH

@@ -32,6 +32,12 @@ class TimelineEvent extends Component {
 
     if (this.props.counter % 2 === 0) {
       c = 'timeline-inverted'
+
+      if (this.props.side === 'same') {
+        c = ''
+      }
+    } else if (this.props.side === 'same') {
+      c = 'timeline-inverted'
     }
 
     if (this.props.type === 'add') {

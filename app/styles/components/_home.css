@@ -1,6 +1,10 @@
 $wrapper-padding: 16px;
 
 
+input, select{
+	color:black;
+}
+
 /*
  * Cover
  */
