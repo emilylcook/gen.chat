@@ -58,7 +58,8 @@ class AddEvent extends Component {
           ImageName: imageName,
           Description: form.description !== undefined ? form.description : '',
           CreatedBy: user.email,
-          CreatedOn: Date.now()
+          CreatedOn: Date.now(),
+          dangerouslySetInnerHTML: false
         }
 
         let dbCon = firebase.database().ref('/events')
@@ -75,7 +76,8 @@ class AddEvent extends Component {
         DateTimestamp: new Date(form.date).getTime(),
         Description: form.description !== undefined ? form.description : '',
         CreatedBy: user.email,
-        CreatedOn: Date.now()
+        CreatedOn: Date.now(),
+        dangerouslySetInnerHTML: false
       }
 
       let dbCon = firebase.database().ref('/events')
