@@ -16,12 +16,16 @@ class Login extends Component {
     const {formState, currentlySending, error} = this.props.data
 
     return (
-      <div id='login-page' className='container site-container'>
-        <div className='form-container'>
-          <div className=''>
-            <h2 className='form-page__form-heading'>Login</h2>
+      <div className='site-wrapper'>
+        <div className='site-wrapper-inner'>
+          <div id='login-page' className='container site-container'>
+            <div className='form-container'>
+              <div className=''>
+                <h2 className='form-page__form-heading'>Login</h2>
+              </div>
+              <LoginForm data={formState} dispatch={dispatch} history={this.props.history} onSubmit={this._login} btnText={'Login'} error={error} currentlySending={currentlySending} />
+            </div>
           </div>
-          <LoginForm data={formState} dispatch={dispatch} history={this.props.history} onSubmit={this._login} btnText={'Login'} error={error} currentlySending={currentlySending} />
         </div>
       </div>
     )

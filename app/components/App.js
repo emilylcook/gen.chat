@@ -12,11 +12,7 @@ class App extends Component {
           dispatch={this.props.dispatch}
           location={this.props.location} />
 
-        <div className='site-wrapper'>
-          <div className='site-wrapper-inner'>
-            {this.props.children}
-          </div>
-        </div>
+          {this.props.children}
       </div>
     )
   }

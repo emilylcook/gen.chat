@@ -35,6 +35,11 @@ input, select{
   vertical-align: middle;
 }
 
+.site-wrapper-inner.timeline{
+  display: table-cell;
+  vertical-align: top;
+}
+
 .cover-heading {
     text-align: left;
 }

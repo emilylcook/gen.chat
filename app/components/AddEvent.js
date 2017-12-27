@@ -16,12 +16,16 @@ class AddEvent extends Component {
     const {formState, currentlySending, addEventError} = this.props.data
 
     return (
-      <div id='add-event-page' className='container site-container'>
-        <div className='form-container'>
-          <div className='header'>
-            <h2 className='heading'>Add Event</h2>
+      <div className='site-wrapper'>
+        <div className='site-wrapper-inner'>
+          <div id='add-event-page' className='container site-container'>
+            <div className='form-container'>
+              <div className='header'>
+                <h2 className='heading'>Add Event</h2>
+              </div>
+              <AddEventForm data={formState} dispatch={dispatch} history={this.props.history} onSubmit={this._AddEvent} btnText={'Submit'} addEventError={addEventError} currentlySending={currentlySending} />
+            </div>
           </div>
-          <AddEventForm data={formState} dispatch={dispatch} history={this.props.history} onSubmit={this._AddEvent} btnText={'Submit'} addEventError={addEventError} currentlySending={currentlySending} />
         </div>
       </div>
     )

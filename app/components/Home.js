@@ -5,15 +5,19 @@ import {Link} from 'react-router'
 class Home extends Component {
   render () {
     return (
-      <article id='cover-container'>
-        <div className='cover-page'>
-          <div className='inner cover col-md-1' />
-          <div className='inner cover col-md-6 cover-heading'>
-            <h1>DO<br />EVERYTHING<br />FOR THE<br />NACHOS.</h1>
-            <Link to='/timeline' className='btn btn-lg btn-default home-btn'>FUCK YEAH</Link>
+    <div className='site-wrapper'>
+      <div className='site-wrapper-inner'>
+        <article id='cover-container'>
+          <div className='cover-page'>
+            <div className='inner cover col-md-1' />
+            <div className='inner cover col-md-6 cover-heading'>
+              <h1>DO<br />EVERYTHING<br />FOR THE<br />NACHOS.</h1>
+              <Link to='/timeline' className='btn btn-lg btn-default home-btn'>FUCK YEAH</Link>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
+    </div>
     )
   }
 }
