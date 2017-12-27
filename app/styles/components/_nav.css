@@ -35,6 +35,7 @@ a:hover {
   transition-duration: 1s;
   transition-timing-function: ease;
 }
+
 .masthead-nav div a:hover,
 .masthead-nav div a:focus {
   background-color: transparent;

@@ -10,6 +10,11 @@ img {
     color:#E3EBEB;
 }
 
+h1#timeline{
+    font-size: 80px;
+    margin:5px;
+}
+
 
 .sort-icon{
     font-size:30px;
