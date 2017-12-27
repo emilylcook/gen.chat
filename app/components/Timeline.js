@@ -38,7 +38,7 @@ class Timeline extends Component {
     let eventNodes = this.state.events.map((event, index) => {
       counter++
       return (
-        <TimelineEvent key={index} side={event.side} descriptionLink={event.descriptionLink} title={event.Title} type={event.Type} date={event.Date} image={event.ImageName} topText={event.TopText} description={event.Description} counter={counter} />
+        <TimelineEvent key={index} side={event.side} dangerouslySetInnerHTML={event.dangerouslySetInnerHTML} descriptionLink={event.descriptionLink} title={event.Title} type={event.Type} date={event.Date} image={event.ImageName} topText={event.TopText} description={event.Description} counter={counter} />
       )
     })
     return (

@@ -56,8 +56,10 @@ class TimelineEvent extends Component {
     }
 
     let descriptionDiv = ''
-    if (this.props.descriptionLink !== '') {
+    if (this.props.descriptionLink !== undefined) {
       descriptionDiv = <div><a href={this.props.descriptionLink}>{this.props.description}</a></div>
+    } else if (this.props.dangerouslySetInnerHTML !== undefined) {
+      descriptionDiv = <div dangerouslySetInnerHTML={{ __html: this.props.description}} />
     } else {
       descriptionDiv = <p>{this.props.description}</p>
     }
