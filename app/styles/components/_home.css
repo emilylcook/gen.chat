@@ -18,7 +18,15 @@ input, select{
 #cover-container, .site-container{
   margin-right: auto;
   margin-left: auto;
-	width: 100vw;
+	overflow-x: hidden;
+}
+
+.site-container{
+	width:99vw;
+}
+
+#cover-container, .noscroll {
+	width:100vw;
 }
 
 .site-wrapper{

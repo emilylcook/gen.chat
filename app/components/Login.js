@@ -18,7 +18,7 @@ class Login extends Component {
     return (
       <div className='site-wrapper'>
         <div className='site-wrapper-inner'>
-          <div id='login-page' className='container site-container'>
+          <div id='login-page' className='container site-container noscroll'>
             <div className='form-container'>
               <div className=''>
                 <h2 className='form-page__form-heading'>Login</h2>

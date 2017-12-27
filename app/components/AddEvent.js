@@ -18,7 +18,7 @@ class AddEvent extends Component {
     return (
       <div className='site-wrapper'>
         <div className='site-wrapper-inner'>
-          <div id='add-event-page' className='container site-container'>
+          <div id='add-event-page' className='container site-container noscroll'>
             <div className='form-container'>
               <div className='header'>
                 <h2 className='heading'>Add Event</h2>
