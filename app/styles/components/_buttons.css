@@ -27,7 +27,7 @@
 /* MASTER BRAND BTN */
 .masthead-brand{
   transition-property: all;
-  transition-duration: 1s;
+  transition-duration: 2s;
   transition-timing-function: ease;
   color: #fff;
   cursor: pointer;
@@ -38,8 +38,13 @@
 
 .masthead-brand:hover,
 .masthead-brand:active {
+  color:#d8d8d8;
+}
+
+/*
+.masthead-brand:hover,
+.masthead-brand:active {
 text-decoration: none;
-/*  letter-spacing: 5px; */
 }
 
 .masthead-brand:after{
@@ -66,4 +71,4 @@ text-decoration: none;
   bottom: auto;
   top: 0;
   width: 80%;
-}
+}*/

@@ -31,12 +31,15 @@ a:hover {
   color: #fff; /* IE8 proofing */
   color: rgba(255,255,255,.75);
   border-bottom: 2px solid transparent;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease;
 }
 .masthead-nav div a:hover,
 .masthead-nav div a:focus {
   background-color: transparent;
   border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.25);
+  border-bottom-color: rgba(255,255,255,.45);
 }
 .masthead-nav a:active {
   color: #fff;
