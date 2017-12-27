@@ -75,7 +75,7 @@ a:hover {
   .site-wrapper-inner {
     vertical-align: middle;
   }
-  .site-wrapper-inner.timeline{
+  .site-wrapper-inner.timeline-inner{
     vertical-align: top;
   }
   /* Handle the widths */

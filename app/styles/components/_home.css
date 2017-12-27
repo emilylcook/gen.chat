@@ -35,7 +35,7 @@ input, select{
   vertical-align: middle;
 }
 
-.site-wrapper-inner.timeline{
+.site-wrapper-inner.timeline-inner{
   display: table-cell;
   vertical-align: top;
 }
