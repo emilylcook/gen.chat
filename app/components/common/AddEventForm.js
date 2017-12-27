@@ -24,9 +24,12 @@ class AddEventForm extends Component {
     return (
       <form className='form' onSubmit={this._onSubmit}>
         {addEventError ? <ErrorMessage error={addEventError} /> : null}
-        <div className='form__field-wrapper'>
+        <div className='col-xs-12 col-md-push-2 col-md-8 form-container'>
+          <label className='col-xs-12 col-md-12 label' htmlFor='title'>
+            Title*
+          </label>
           <input
-            className='form__field-input'
+            className='field'
             type='text'
             required='true'
             id='username'
@@ -36,13 +39,13 @@ class AddEventForm extends Component {
             autoCorrect='off'
             autoCapitalize='off'
             spellCheck='false' />
-          <label className='form__field-label' htmlFor='title'>
-            Title*
-          </label>
         </div>
-        <div className='form__field-wrapper'>
+        <div className='col-xs-12 col-md-push-2 col-md-8 form-container'>
+          <label className='col-xs-12 col-md-12 label' htmlFor='title'>
+            Type*
+          </label>
           <select
-            className='form__field-input'
+            className='field'
             type='text'
             required='true'
             id='username'
@@ -55,26 +58,26 @@ class AddEventForm extends Component {
             <option value='add'>New Member</option>
             <option value='removal'>BOYBYE</option>
           </select>
-          <label className='form__field-label' htmlFor='title'>
-            Type*
-          </label>
         </div>
-        <div className='form__field-wrapper'>
+        <div className='col-xs-12 col-md-push-2 col-md-8 form-container'>
+          <label className='col-xs-12 col-md-12 label' htmlFor='date'>
+            Date*
+          </label>
           <input
-            className='form__field-input'
+            className='field'
             id='date'
             type='date'
             required='true'
             value={this.props.data.date}
             placeholder='mm/dd/yyyy'
             onChange={this._changeDate} />
-          <label className='form__field-label' htmlFor='date'>
-            Date*
-          </label>
         </div>
-        <div className='form__field-wrapper'>
+        <div className='col-xs-12 col-md-push-2 col-md-8 form-container'>
+          <label className='col-xs-12 col-md-12 label' htmlFor='date'>
+            Image File
+          </label>
           <input
-            className='form__field-input'
+            className='field'
             id='upload'
             ref='upload'
             type='file'
@@ -84,27 +87,24 @@ class AddEventForm extends Component {
               event.target.value = null
             }}
           />
-          <label className='form__field-label' htmlFor='date'>
-            Image File
-          </label>
         </div>
-        <div className='form__field-wrapper'>
+        <div className='col-xs-12 col-md-push-2 col-md-8 form-container'>
+        <label className='col-xs-12 col-md-12 label' htmlFor='date'>
+          Description
+        </label>
           <input
-            className='form__field-input'
+            className='field'
             id='description'
             type='text'
             value={this.props.data.description}
             placeholder='After a few too many mimosas....'  // todo: (fun) maybe make this randomized between a few
             onChange={this._changeDescription} />
-          <label className='form__field-label' htmlFor='date'>
-            Description
-          </label>
         </div>
-        <div className='form__submit-btn-wrapper'>
+        <div className='col-xs-12 col-md-push-2 col-md-8 form__submit-btn-wrapper'>
           {this.props.currentlySending ? (
             <LoadingButton />
           ) : (
-            <button className='form__submit-btn' type='submit'>
+            <button className='btn btn-default button' type='submit'>
               {this.props.btnText}
             </button>
              )}

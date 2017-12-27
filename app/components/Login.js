@@ -16,9 +16,9 @@ class Login extends Component {
     const {formState, currentlySending, error} = this.props.data
 
     return (
-      <div className='form-page__wrapper'>
-        <div className='form-page__form-wrapper'>
-          <div className='form-page__form-header'>
+      <div id='login-page' className='container site-container'>
+        <div className='form-container'>
+          <div className=''>
             <h2 className='form-page__form-heading'>Login</h2>
           </div>
           <LoginForm data={formState} dispatch={dispatch} history={this.props.history} onSubmit={this._login} btnText={'Login'} error={error} currentlySending={currentlySending} />

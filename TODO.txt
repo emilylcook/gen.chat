@@ -1,9 +1,10 @@
 EMILY TODO:
 
 P1
--> max width on timeline items
--> icon colors
 -> set html, dANGGErrouslly
+-> site scroll
+-> login
+-> choppy page transition
 
 Other
 -> css shadow only on home page (fix container)

@@ -42,18 +42,14 @@ class Timeline extends Component {
       )
     })
     return (
-      <div className='site-wrapper'>
-        <div className='site-wrapper-inner'>
-          <div className='container site-container'>
-            <div className='page-header'>
-                <h1 id='timeline'>History of Gen.Chat</h1>
-            </div>
-            {/*<span id='SortTimeline' className='sort-icon glyphicon glyphicon-chevron-down'></span>*/}
-            <ul id='History-timeline' className='col-md-push-2 col-md-8 timeline'>
-              {eventNodes}
-            </ul>
-          </div>
+      <div className='container site-container'>
+        <div className='page-header'>
+            <h1 id='timeline'>History of Gen.Chat</h1>
         </div>
+        {/*<span id='SortTimeline' className='sort-icon glyphicon glyphicon-chevron-down'></span>*/}
+        <ul id='History-timeline' className='col-md-push-2 col-md-8 timeline'>
+          {eventNodes}
+        </ul>
       </div>
     )
   }

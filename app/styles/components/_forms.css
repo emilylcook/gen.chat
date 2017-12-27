@@ -1,0 +1,34 @@
+.form__error{
+  color: #feceff;
+  text-shadow: none;
+}
+
+input, select, input[type=file]{
+  max-width: 500px;
+  width:100%;
+  height: 50px;
+  padding-left: 15px;
+  margin: 5px;
+  display:inline-block;
+}
+
+.label{
+  color: #ffc3c3;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+#login-page input {
+  max-width: 500px;
+  width:100%;
+  height: 50px;
+  padding-left: 15px;
+  margin: 5px;
+}
+
+#login-page .btn {
+  margin-top:10px;
+  max-width: 500px;
+  width:100%;
+}
