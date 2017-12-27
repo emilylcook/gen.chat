@@ -85,3 +85,50 @@ a:hover {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
 }
+
+
+@media (max-width: 767px) {
+  .inner {
+    padding:0;
+  }
+  /* Pull out the header and footer */
+  .masthead {
+    position: absolute;
+    top: 0;
+  }
+
+  .masthead-brand {
+    float:left;
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    color: rgba(255,255,255,.75);
+    border-bottom: 2px solid transparent;
+    margin:5px;
+  }
+
+  .masthead-nav {
+    float:right;
+  }
+
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  .site-wrapper-inner.timeline-inner{
+    vertical-align: top;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
