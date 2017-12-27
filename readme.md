@@ -9,22 +9,10 @@ This is an application made with react and firebase, taking advantage of the rea
 To-Do?
 ---------
 
-hot:
-- firebase deploy
-
-- add sort order to pull
-- style things
-  - bring in less or sass
-  - nav 'selected' state
-- bring in styling from og genchat
-- bring in homepage
-
 
 Road Map
 ---------
-- some sort of alert for viewing users that an event was added
 - sorting, searching
--
 
 
 Run It
@@ -32,7 +20,25 @@ Run It
 clone the repro
 1) npm install
 2) npm start
-3) add firebase configs to a config.json (todo - add an exampleconfig with blank values for the repro)
+3) add firebase configs to a config.json (exampleconfig with blank values for the repro)
+
+// config.js
+
+var firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: ",
+  messagingSenderId: "
+  "
+};
+
+
+
+// export it
+exports.firebase = firebaseConfig;
+
 
 setting up firebase
 1) firebase init -> check database / hosting
