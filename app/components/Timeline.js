@@ -46,7 +46,7 @@ class Timeline extends Component {
               evnt.ImageUrl = url
 
               let updateEvents = this.state.events
-              let u  = updateEvents.find(item => item.ImageName === evnt.ImageName)
+              let u = updateEvents.find(item => item.ImageName === evnt.ImageName)
               u.ImageUrl = url
 
               this.setState ({
