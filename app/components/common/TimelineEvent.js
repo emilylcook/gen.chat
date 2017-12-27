@@ -16,14 +16,7 @@ class TimelineEvent extends Component {
   }
 
   componentWillMount () {
-    var storageRef = firebase.storage().ref()
-    if (this.props.image != null) {
-      storageRef.child('images/' + this.props.image).getDownloadURL().then(url => {
-        this.setState({
-          imageUrl: url
-        })
-      })
-    }
+
   }
 
   render () {
@@ -51,8 +44,8 @@ class TimelineEvent extends Component {
     }
 
     let imageDiv = ''
-    if (this.state.imageUrl !== '') {
-      imageDiv = <img src={this.state.imageUrl} />
+    if (this.props.imageUrl !== '') {
+      imageDiv = <img src={this.props.imageUrl} />
     }
 
     let descriptionDiv = ''

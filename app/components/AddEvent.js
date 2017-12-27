@@ -36,7 +36,7 @@ class AddEvent extends Component {
 
     if (form.file != null) {
       var image = form.file
-      var imageName = Date.now() + image.name.replace('<', '').replace('>', '').replace('|', '').replace('/','').replace('script','badnoah')
+      var imageName = Date.now() + image.name.replace('<', '').replace('>', '').replace('|', '').replace('/', '').replace('script', 'badnoah')
       var storageRef = firebase.storage().ref()
 
       // Upload file
