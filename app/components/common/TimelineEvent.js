@@ -43,9 +43,11 @@ class TimelineEvent extends Component {
     if (this.props.type === 'add') {
       iconType = 'plus'
     } else if (this.props.type === 'celebrate') {
-      iconType = 'time'
+      iconType = 'send'
     } else if (this.props.type === 'removal') {
       iconType = 'minus'
+    } else if (this.props.type === 'memory') {
+      iconType = 'time'
     }
 
     let imageDiv = ''
@@ -65,10 +67,9 @@ class TimelineEvent extends Component {
       topText = <p>{this.props.topText}</p>
     }
 
-
     return (
       <li className={c}>
-        <div className='timeline-badge success'><i className={'glyphicon glyphicon-' + iconType} /></div>
+        <div className={'timeline-badge success ' + iconType}><i className={'glyphicon glyphicon-' + iconType} /></div>
         <div className='timeline-panel'>
           <div className='timeline-heading'>
             <h4 className='timeline-title'>{this.props.title}</h4>

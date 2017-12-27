@@ -131,24 +131,20 @@ img {
                 right: auto;
             }
 
-.timeline-badge.primary {
-    background-color: #2e6da4 !important;
+.timeline-badge.send {
+    background-color: #2e6da4 !important;  /* blue */
 }
 
-.timeline-badge.success {
-    background-color: #3f903f !important;
+.timeline-badge.plus {
+    background-color: #3f903f !important; /* green */
 }
 
-.timeline-badge.warning {
-    background-color: #f0ad4e !important;
+.timeline-badge.time {
+    background-color: #f0ad4e !important; /* yellow */
 }
 
-.timeline-badge.danger {
-    background-color: #d9534f !important;
-}
-
-.timeline-badge.info {
-    background-color: #5bc0de !important;
+.timeline-badge.minus {
+    background-color: #d9534f !important; /* red */
 }
 
 .timeline-title {
