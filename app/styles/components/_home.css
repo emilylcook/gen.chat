@@ -83,15 +83,22 @@ body {
 		width:100vw;
 	}
 
-	body {
-	  height: 100vh;
+	.page-header {
+		margin-top:10px;
+	}
+
+	.site-wrapper{
+		box-shadow: none;
+	}
+
+	html {
 	  background: url(../public/images/home-background.png) no-repeat center center fixed;
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
 	  background-size: cover;
 	}
-	html{
+	body{
 		background: none;
 	}
 }

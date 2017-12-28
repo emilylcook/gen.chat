@@ -93,8 +93,16 @@ a:hover {
   }
   /* Pull out the header and footer */
   .masthead {
-    position: absolute;
+    position: relative;
     top: 0;
+  }
+
+  .cover-heading {
+    margin-left:15px;
+  }
+
+  .cover-heading h1 {
+    font-size:60px;
   }
 
   .masthead-brand {
