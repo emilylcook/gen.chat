@@ -163,6 +163,16 @@ h1#timeline{
     margin-bottom: 0;
 }
 
+.timeline-body a {
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+.timeline-body a:hover {
+  color: #f0bcbc;
+}
+
 .timeline-body > p + p {
     margin-top: 5px;
 }

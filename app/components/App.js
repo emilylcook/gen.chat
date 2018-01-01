@@ -11,8 +11,7 @@ class App extends Component {
           history={this.props.history}
           dispatch={this.props.dispatch}
           location={this.props.location} />
-
-          {this.props.children}
+        {this.props.children}
       </div>
     )
   }

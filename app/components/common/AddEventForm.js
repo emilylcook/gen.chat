@@ -89,9 +89,9 @@ class AddEventForm extends Component {
           />
         </div>
         <div className='col-xs-12 col-md-push-2 col-md-8 form-container'>
-        <label className='col-xs-12 col-md-12 label' htmlFor='date'>
-          Description
-        </label>
+          <label className='col-xs-12 col-md-12 label' htmlFor='date'>
+            Description
+          </label>
           <input
             className='field'
             id='description'
@@ -122,16 +122,16 @@ class AddEventForm extends Component {
   }
 
   _changeImage (event) {
-    event.preventDefault();
+    event.preventDefault()
 
-    let reader = new FileReader();
-    let file = event.target.files[0];
+    let reader = new FileReader()
+    let file = event.target.files[0]
 
     reader.onloadend = () => {
       this.setState({
-          file: file
-        });
-      }
+        file: file
+      })
+    }
 
     reader.readAsDataURL(file)
   }

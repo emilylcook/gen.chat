@@ -33,15 +33,15 @@ class Nav extends Component {
 
     return (
       <div className='masthead clearfix'>
-         <div className='inner'>
-           <Link to='/' className='nav__logo-wrapper' onClick={this._clearError}>
-             <h3 className='masthead-brand'>Gen.Chat</h3>
-           </Link>
-           <nav className='nav masthead-nav'>
-               {navButtons}
-           </nav>
-         </div>
-     </div>
+        <div className='inner'>
+          <Link to='/' className='nav__logo-wrapper' onClick={this._clearError}>
+            <h3 className='masthead-brand'>Gen.Chat</h3>
+          </Link>
+          <nav className='nav masthead-nav'>
+            {navButtons}
+          </nav>
+        </div>
+      </div>
     )
   }
 

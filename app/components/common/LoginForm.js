@@ -29,9 +29,7 @@ class LoginForm extends Component {
             autoCorrect='off'
             autoCapitalize='off'
             spellCheck='false' />
-          <label className='form__field-label' htmlFor='username'>
-
-          </label>
+          <label className='form__field-label' htmlFor='username' />
         </div>
         <div className='form__field-wrapper'>
           <input
@@ -41,9 +39,7 @@ class LoginForm extends Component {
             value={this.props.data.password}
             placeholder='nachosplease'
             onChange={this._changePassword} />
-          <label className='form__field-label' htmlFor='password'>
-
-          </label>
+          <label className='form__field-label' htmlFor='password' />
         </div>
         <div className='form__submit-btn-wrapper'>
           {this.props.currentlySending ? (
